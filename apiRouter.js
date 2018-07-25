@@ -44,14 +44,8 @@ router.post('/moods', (req, res) => {
             })
             .catch(err => {
                 console.log(err);
-              // Forward validation errors on to the client, otherwise give a 500
-              // error because something unexpected has happened
-            if (err) {
-                return res.status(err.code).json(err);
-              }
-              res.status(500).json({code: 500, message: 'Internal server error'});
-            });
         });
+    });
 /*
 router.put('/moods/:id', (req, res) => {
     MoodEntry.findByIdAndUpdate()
